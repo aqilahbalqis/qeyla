@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Portfolio | Aqilah</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f7f4;
+      color: #263442;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #192e40;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    header h2 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: #d8bfa0;
+    }
+
+    .hero {
+      padding: 100px 8%;
+      background: #e9e5de;
+    }
+
+    .hero small {
+      color: #8c7155;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      margin: 15px 0;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #586573;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #192e40;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    .btn:hover {
+      background: #8c7155;
+    }
+
+    section {
+      padding: 65px 8%;
+      scroll-margin-top: 20px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #192e40;
+    }
+
+    .subtitle {
+      color: #8c7155;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin: 18px 0;
+      border: 1px solid #e8e5df;
+    }
+
+    .card h3 {
+      margin-bottom: 5px;
+    }
+
+    .date {
+      color: #8c7155;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .skills span {
+      background: #e9e5de;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    #connect {
+      background: #192e40;
+      color: white;
+    }
+
+    #connect h2 {
+      color: white;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 25px;
+    }
+
+    .contact-links a {
+      color: #e3c7a5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #122333;
+      color: #c6cdd3;
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 20px 6%;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 70px 6%;
+      }
+
+      section {
+        padding: 50px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>AQILAH.</h2>
+
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#profile">Professional Profile</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#connect">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <small>GET TO KNOW ME</small>
+
+    <h1>Hello, I'm<br>'Aqilah Balqis.</h1>
+
+    <p>
+      A motivated graduate interested in administration,
+      operations support and creative work.
+      I am passionate about learning, growing
+      and contributing to a professional team.
+    </p>
+
+    <a href="#experience" class="btn">
+      Explore My Experience
+    </a>
+
+    <a href="#connect" class="btn">
+      Let's Connect
+    </a>
+  </div>
+
+  <section id="about">
+    <p class="subtitle">GET TO KNOW ME</p>
+    <h2>About Me</h2>
+
+    <p>
+      A fresh graduate with a Bachelor of Usuluddin with
+      Honours and a Diploma in Islamic Studies and 
+      Information Technology from Universiti Sultan Zainal
+      Abidin (UniSZA).
+    </p>
+
+    <p>
+      Has a strong interest in administration,
+      secretarial work, financial management and operational support.
+      Keen to build a career in administrative and office management, 
+      particularly in document management, record keeping, 
+      financial administration and daily office operations.
+    </p>
+  </section>
+
+  <section id="profile">
+    <p class="subtitle">WHO I AM</p>
+    <h2>Professional Profile</h2>
+
+    <div class="card">
+      <p>
+        Gained practical experience through an internship
+        and previous work experience involving administrative
+        support, documentation, filing, record management, 
+        programme coordination and general office tasks. 
+        Also has an interest in creative work, including 
+        designing and producing visual materials 
+        using Canva and other basic digital tools. 
+        Equipped with basic computer skills, good organisational 
+        abilities and a willingness to learn new systems and procedures. 
+        Able to work independently or as part of a team, with a responsible 
+        attitude, good judgement and adaptability in handling different tasks.
+      </p>
+
+      <div class="skills">
+        <span>Administration</span>
+        <span>Document Management</span>
+        <span>Secretarial</span>
+        <span>Financial Administration</span>
+        <span>Financial Record Keeping</span>
+        <span>Data Entry</span>
+        <span>Microsoft Office</span>
+        <span>Google Workspace</span>
+        <span>Canva</span>
+        <span>CapCut</span>
+        <span>Teamwork</span>
+        <span>Problem Solving</span>
+        <span>Willingness to Learn</span>
+        <span>Time Management</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <p class="subtitle">MY JOURNEY</p>
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>Secretariat Intern</h3>
+      <p class="date">
+        Yayasan Dakwah Islamiah Malaysia (YADIM)
+        July – October 2026
+      </p>
+
+      <ul>
+        <li>Supported daily administrative activities.</li>
+        <li>Organised documents and updated information related to office operations.</li>
+        <li>Prepared documentation materials for organisational activities.</li>
+        <li>Assisted with daily administrative tasks and programme activities.</li>
+        <li>Created posters for organisational programmes and competitions.</li>
+      </ul>
+    </div>
+
+        <div class="card">
+      <h3>Online Teacher - Freelance</h3>
+      <p class="date">
+        KQO (Kelas Quran Online)
+        November – December 2025 | January – February 2026
+      </p>
+
+      <ul>
+        <li>Taught Quran reading, Iqra' and basic Tajwid to students online.</li>
+        <li>Guided students in improving their reading fluency and understanding of basic Tajwid.</li>
+        <li>Prepared teaching materials and monitored students' reading progress.</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <h3>Part-Time Administrative Support</h3>
+      <p class="date">
+        Shopee — Administrative
+        July – September 2025
+      </p>
+
+      <ul>
+        <li>Assisted with daily operations and the arrangement of goods.</li>
+        <li>Helped maintain an organised storage and goods-handling process.</li>
+        <li>Supported logistics activities, including goods movement, handling and coordination.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <p class="subtitle">ACADEMIC BACKGROUND</p>
+    <h2>Education</h2>
+
+    <div class="card">
+      <h3>Bachelor's Degree in Usuluddin with Honours</h3>
+      <p class="date">
+        Universiti Sultan Zainal Abidin (UniSZA)
+        2023 – 2026
+      </p>
+      
+      <ul>
+        <li>Completed a Final Year Project (FYP) involving academic research, thesis writing and information analysis.</li>
+        <li>Studied Islamic theology, Quranic studies, Hadith, Islamic thought, Tasawwuf and classical Islamic texts (Turath).</li>
+        <li>Participated in organising and managing academic programmes and university activities.</li>
+        <li>Completed Quranic memorisation requirements involving selected Surahs.</li>
+        <li>Developed skills in academic writing, research, critical thinking, presentations and teamwork.</li>
+        <li>Developed Arabic language skills through reading, understanding and analysing classical Islamic texts.</li>
+     </ul>
+    </div>
+
+    <div class="card">
+      <h3>Diploma in Islamic Studies and Information Technology</h3>
+      <p class="date">
+        Universiti Sultan Zainal Abidin (UniSZA)
+        2021 – 2023
+      </p>
+      <ul>
+        <li>Studied fundamental Islamic subjects, Arabic language and Information Technology.</li>
+        <li>Developed a restaurant ordering application as part of an academic project.</li>
+        <li>Completed basic system development and programming tasks using Java.</li>
+        <li>Created a simple digital game using Adobe software as part of multimedia coursework.</li>
+        <li>Gained practical experience in web design using HTML and CSS, as well as graphic design using Adobe Illustrator and Canva.</li>
+     </ul>
+    </div>
+  </section>
+
+ 
+<section id="certifications">
+  <p class="subtitle">LEARNING & DEVELOPMENT</p>
+  <h2>Certificates & Achievements</h2>
+
+  <!-- 2026 -->
+  <div class="card">
+    <h3>2026</h3>
+    <ul>
+      <li>
+        <strong>Secretariat Intern</strong> — Yayasan Dakwah Islamiah Malaysia (YADIM), Putrajaya
+        <p class="date">July – October 2026</p>
+      </li>
+      <li>
+        <strong>Inspector Certificate</strong> — Kor SUKSIS 
+        <p class="date">2026</p>
+      </li>
+      <li>
+        <strong>Exco Multimedia & Technical</strong> — Akidah Enrichment Camp
+        <p class="date">2026</p>
+      </li>
+      <li>
+        <strong>Spiritual Affairs Exco</strong> — Basic Course for General Operations Force (GOF)
+        <p class="date">April 2026</p>
+      </li>
+      <li>
+        <strong>Modern Era Aqidah Seminar</strong>
+        <p class="date">January 2026</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 2025 -->
+  <div class="card">
+    <h3>2025</h3>
+    <ul>
+      <li>
+        <strong>Musketry & Shooting Training Programme</strong> — Kor SUKSIS
+        <p class="date">2025</p>
+      </li>
+      <li>
+        <strong>Sports Referee</strong> — PERSADA
+        <p class="date">2025</p>
+      </li>
+      <li>
+        <strong>Terengganu Marathon (TM25)</strong>
+        <p class="date">2025</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 2023 -->
+  <div class="card">
+    <h3>2023</h3>
+    <ul>
+      <li>
+        <strong>Diploma in Islamic Studies and Information Technology</strong> — UniSZA
+        <p class="date">2023</p>
+      </li>
+      <li>
+        <strong>Head of Spiritual Exco Appointment</strong> — Kor SUKSIS, 2023/2025 Session
+        <p class="date">2023</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="sports">
+  <p class="subtitle">SPORTS & CO-CURRICULAR</p>
+  <h2>Sports Achievements</h2>
+
+  <!-- 2025 -->
+  <div class="card">
+    <h3>2025 — Sports Week & Cultural Festival</h3>
+    <ul>
+      <li>Netball — 1st Place</li>
+      <li>Handball — 1st Place</li>
+      <li>Badminton Doubles — 2nd Place</li>
+    </ul>
+  </div>
+
+  <!-- 2024 -->
+  <div class="card">
+    <h3>2024 — Sports Week & Cultural Festival</h3>
+    <ul>
+      <li>Netball — 1st Place</li>
+      <li>Volleyball — 3rd Place</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>2024 — Mawahib Sukan Antara Syukbah (MASAS)</h3>
+    <ul>
+      <li>Badminton — 3rd Place</li>
+    </ul>
+  </div>
+</section>
+
+  <section id="connect">
+    <p class="subtitle">LET'S CONNECT</p>
+    <h2>Get In Touch</h2>
+
+    <p>
+      Feel free to reach out for professional
+      opportunities.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:aaqilahbbalqis@gmail.com">
+        EMAIL
+      </a>
+
+      <a href="https://github.com/aqilahbalqis">
+        GITHUB
+      </a>
+
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN">
+        LINKEDIN
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Aqilah Balqis | Personal Portfolio
+  </footer>
+
+</body>
+</html>
