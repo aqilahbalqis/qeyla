@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>'Aqilah Balqis | Personal Portfolio</title>
 
 <style>
@@ -60,6 +60,14 @@ header h2 {
   font-weight: 800;
 }
 
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -100,21 +108,26 @@ nav a.active::after {
   width: 100%;
 }
 
-#lang-toggle {
-  background: none;
-  border: none;
-  color: var(--pink);
-  font-weight: 800;
-  font-size: 14px;
+/* LANGUAGE TOGGLE BUTTON */
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--pink-soft);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
   cursor: pointer;
-  padding: 7px 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
 
-#lang-toggle:hover {
-  background-color: rgba(237,105,181,0.2);
-  color: #fff;
+.lang-btn:hover {
+  background: var(--pink);
+  color: #1b1019;
+  border-color: var(--pink);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--glow);
 }
 
 /* HERO */
@@ -378,26 +391,6 @@ section > p:not(.subtitle) {
   box-shadow: 0 6px 15px rgba(237,105,181,0.18);
 }
 
-/* CERTIFICATE LINKS */
-
-.certificate-link {
-  display: inline-block;
-  color: var(--pink-soft);
-  text-decoration: none;
-  border: 1px solid var(--border);
-  padding: 7px 16px;
-  border-radius: 5px;
-  margin-top: 10px;
-  font-size: 12px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.certificate-link:hover {
-  background: #d95caa;
-  color: #ffffff;
-}
-
 /* CONTACT */
 
 #connect {
@@ -455,10 +448,14 @@ footer {
 
 /* MOBILE */
 
-@media (max-width:700px) {
+@media(max-width:700px) {
   header {
     justify-content: center;
     padding: 15px 4%;
+  }
+
+  .nav-container {
+    gap: 10px;
   }
 
   nav {
@@ -495,141 +492,296 @@ footer {
 <header>
   <h2>'AQILAH.</h2>
 
-  <nav>
-    <a href="#about" data-key="nav-about">About Me</a>
-    <a href="#profile" data-key="nav-profile">Profile</a>
-    <a href="#experience" data-key="nav-experience">Experience</a>
-    <a href="#education" data-key="nav-education">Education</a>
-    <a href="#certifications" data-key="nav-certifications">Certificates</a>
-    <a href="#sports" data-key="nav-sports">Sports</a>
-    <a href="#connect" data-key="nav-connect">Contact</a>
-  </nav>
-
-  <button id="lang-toggle" aria-label="Toggle Language">BM</button>
+  <div class="nav-container">
+    <nav>
+      <a href="#about" data-en="About Me" data-bm="Tentang Saya">About Me</a>
+      <a href="#profile" data-en="Profile" data-bm="Profil">Profile</a>
+      <a href="#experience" data-en="Experience" data-bm="Pengalaman">Experience</a>
+      <a href="#education" data-en="Education" data-bm="Pendidikan">Education</a>
+      <a href="#certifications" data-en="Certificates" data-bm="Sijil">Certificates</a>
+      <a href="#sports" data-en="Sports" data-bm="Sukan">Sports</a>
+      <a href="#connect" data-en="Contact" data-bm="Hubungi">Contact</a>
+    </nav>
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">BM / EN</button>
+  </div>
 </header>
 
 <div class="hero">
   <div class="profile-image">
-    <img src="profile.jpg" alt="Aqilah Balqis" />
+    <img src="profile.jpg" alt="Aqilah Balqis">
   </div>
 
-  <small data-key="hero-welcome">WELCOME TO MY PORTFOLIO</small>
+  <small data-en="WELCOME TO MY PORTFOLIO" data-bm="SELAMAT DATANG KE PORTFOLIO SAYA">WELCOME TO MY PORTFOLIO</small>
 
   <h1>
-    <span data-key="hero-hello">Hello, I'm</span><br />
+    <span data-en="Hello, I'm" data-bm="Helo, Saya">Hello, I'm</span><br>
     <span>'Aqilah Balqis.</span>
   </h1>
 
   <div>
-    <a href="#about" class="btn" data-key="btn-get-to-know">Get To Know Me</a>
-    <a href="#connect" class="btn" data-key="btn-connect">Let's Connect</a>
+    <a href="#about" class="btn" data-en="Get To Know Me" data-bm="Kenali Saya">Get To Know Me</a>
+    <a href="#connect" class="btn" data-en="Let's Connect" data-bm="Jom Berhubung">Let's Connect</a>
   </div>
 </div>
 
 <section id="about">
-  <p class="subtitle" data-key="about-subtitle">GET TO KNOW ME</p>
-  <h2 data-key="about-title">About Me</h2>
+  <p class="subtitle" data-en="GET TO KNOW ME" data-bm="KENALI SAYA">GET TO KNOW ME</p>
+  <h2 data-en="About Me" data-bm="Tentang Saya">About Me</h2>
 
-  <p data-key="about-p1">
-    A fresh graduate with a Bachelor of Usuluddin with
-    Honours and a Diploma in Islamic Studies and
-    Information Technology from Universiti Sultan Zainal
-    Abidin (UniSZA).
+  <p data-en="A fresh graduate with a Bachelor of Usuluddin with Honours and a Diploma in Islamic Studies and Information Technology from Universiti Sultan Zainal Abidin (UniSZA)." 
+     data-bm="Graduan baharu berkelulusan Ijazah Sarjana Muda Usuluddin dengan Kepujian serta Diploma Pengajian Islam dan Teknologi Maklumat dari Universiti Sultan Zainal Abidin (UniSZA).">
+    A fresh graduate with a Bachelor of Usuluddin with Honours and a Diploma in Islamic Studies and Information Technology from Universiti Sultan Zainal Abidin (UniSZA).
   </p>
 
-  <p data-key="about-p2">
-    Has a strong interest in administration,
-    secretarial work, financial management and operational
-    support. Keen to build a career in administrative
-    and office management, particularly in document
-    management, record keeping, financial administration
-    and daily office operations.
+  <p data-en="Has a strong interest in administration, secretarial work, financial management and operational support. Keen to build a career in administrative and office management, particularly in document management, record keeping, financial administration and daily office operations." 
+     data-bm="Mempunyai minat yang mendalam dalam bidang pentadbiran, kerja-kerja kesetiausahaan, pengurusan kewangan dan sokongan operasi. Bersemangat membina kerjaya dalam pengurusan pentadbiran dan pejabat, terutamanya dalam pengurusan dokumen, penyimpanan rekod, pentadbiran kewangan dan operasi harian pejabat.">
+    Has a strong interest in administration, secretarial work, financial management and operational support. Keen to build a career in administrative and office management, particularly in document management, record keeping, financial administration and daily office operations.
   </p>
 </section>
 
 <section id="profile">
-  <p class="subtitle" data-key="profile-subtitle">WHO I AM</p>
-  <h2 data-key="profile-title">Professional Profile</h2>
+  <p class="subtitle" data-en="WHO I AM" data-bm="SIAPA SAYA">WHO I AM</p>
+  <h2 data-en="Professional Profile" data-bm="Profil Profesional">Professional Profile</h2>
 
   <div class="card">
-    <p data-key="profile-p">
-      Gained practical experience through an internship
-      and previous work experience involving administrative
-      support, documentation, filing, record management,
-      programme coordination and general office tasks.
-      Also has an interest in creative work, including
-      designing and producing visual materials using basic
-      digital tools. Equipped with basic computer skills,
-      good organisational abilities and a willingness to
-      learn new systems and procedures. Able to work
-      independently or as part of a team, with a responsible
-      attitude, good judgement and adaptability in handling
-      different tasks.
+    <p data-en="Gained practical experience through an internship and previous work experience involving administrative support, documentation, filing, record management, programme coordination and general office tasks. Also has an interest in creative work, including designing and producing visual materials using basic digital tools. Equipped with basic computer skills, good organisational abilities and a willingness to learn new systems and procedures. Able to work independently or as part of a team, with a responsible attitude, good judgement and adaptability in handling different tasks."
+       data-bm="Memperoleh pengalaman praktikal melalui latihan industri dan pengalaman kerja terdahulu yang melibatkan sokongan pentadbiran, dokumentasi, fail, pengurusan rekod, koordinasi program serta tugasan am pejabat. Turut berminat dalam kerja kreatif termasuk mereka bentuk dan menghasilkan bahan visual menggunakan alatan digital asas. Dilengkapi kemahiran komputer asas, kebolehan organisasi yang baik serta bersedia mempelajari sistem dan prosedur baharu. Mampu bekerja secara berdikari atau berkumpulan, berjiwa bertanggungjawab, berdaya pertimbangan yang baik dan mudah menyesuaikan diri dalam mengendalikan pelbagai tugasan.">
+      Gained practical experience through an internship and previous work experience involving administrative support, documentation, filing, record management, programme coordination and general office tasks. Also has an interest in creative work, including designing and producing visual materials using basic digital tools. Equipped with basic computer skills, good organisational abilities and a willingness to learn new systems and procedures. Able to work independently or as part of a team, with a responsible attitude, good judgement and adaptability in handling different tasks.
     </p>
 
     <div class="skills">
-      <span data-key="skill-administration">Administration</span>
-      <span data-key="skill-document-management">Document Management</span>
-      <span data-key="skill-secretarial">Secretarial</span>
-      <span data-key="skill-financial-administration">Financial Administration</span>
-      <span data-key="skill-financial-record-keeping">Financial Record Keeping</span>
-      <span data-key="skill-data-entry">Data Entry</span>
-      <span data-key="skill-microsoft-office">Microsoft Office</span>
-      <span data-key="skill-google-workspace">Google Workspace</span>
-      <span data-key="skill-github-pages">GitHub Pages</span>
-      <span data-key="skill-basic-html-css">Basic HTML & CSS</span>
-      <span data-key="skill-canva">Canva</span>
-      <span data-key="skill-capcut">CapCut</span>
-      <span data-key="skill-teamwork">Teamwork</span>
-      <span data-key="skill-problem-solving">Problem Solving</span>
-      <span data-key="skill-willingness-to-learn">Willingness to Learn</span>
-      <span data-key="skill-time-management">Time Management</span>
+      <span>Administration</span>
+      <span>Document Management</span>
+      <span>Secretarial</span>
+      <span>Financial Administration</span>
+      <span>Financial Record Keeping</span>
+      <span>Data Entry</span>
+      <span>Microsoft Office</span>
+      <span>Google Workspace</span>
+      <span>GitHub Pages</span>
+      <span>Basic HTML & CSS</span>
+      <span>Canva</span>
+      <span>CapCut</span>
+      <span>Teamwork</span>
+      <span>Problem Solving</span>
+      <span>Willingness to Learn</span>
+      <span>Time Management</span>
     </div>
   </div>
 </section>
 
-<!-- You can add more data-key on other sections to support more translations -->
-
-<!-- Keep your original content below unchanged -->
-
 <section id="experience">
-  <p class="subtitle" data-key="experience-subtitle">MY JOURNEY</p>
-  <h2 data-key="experience-title">Experience</h2>
+  <p class="subtitle" data-en="MY JOURNEY" data-bm="PERJALANAN SAYA">MY JOURNEY</p>
+  <h2 data-en="Experience" data-bm="Pengalaman">Experience</h2>
 
   <div class="card">
-    <h3 data-key="experience-1-title">Secretariat Intern</h3>
+    <h3 data-en="Secretariat Intern" data-bm="Pelatih Sekretariat">Secretariat Intern</h3>
     <p class="date">
-      Yayasan Dakwah Islamiah Malaysia (YADIM)<br />
-      July – October 2026
+      Yayasan Dakwah Islamiah Malaysia (YADIM)<br>
+      <span data-en="July – October 2026" data-bm="Julai – Oktober 2026">July – October 2026</span>
     </p>
     <ul>
-      <li>Provided administrative and secretariat support for daily office operations and organisational programmes</li>
-      <li>Managed documents, records and programme-related information, including preparing administrative materials</li>
-      <li>Assisted in coordinating programme activities and developing digital content using Canva</li>
-      <li>Used AI tools to create logos, images, animated videos, promotional content, websites and interactive educational games</li>
-      <li>Explored AI-assisted development of management systems, data collection platforms, dashboards and interactive applications</li>
-      <li>Collaborated in a team to develop Y-Care Portal PWA YADIM, a web-based digital platform created using Canva and AI tools</li>
+      <li data-en="Provided administrative and secretariat support for daily office operations and organisational programmes" data-bm="Memberikan sokongan pentadbiran dan sekretariat untuk operasi harian pejabat serta program organisasi">Provided administrative and secretariat support for daily office operations and organisational programmes</li>
+      <li data-en="Managed documents, records and programme-related information, including preparing administrative materials" data-bm="Menguruskan dokumen, rekod dan maklumat berkaitan program, termasuk penyediaan bahan pentadbiran">Managed documents, records and programme-related information, including preparing administrative materials</li>
+      <li data-en="Assisted in coordinating programme activities and developing digital content using Canva" data-bm="Membantu menyelaraskan aktiviti program dan membangunkan kandungan digital menggunakan Canva">Assisted in coordinating programme activities and developing digital content using Canva</li>
+      <li data-en="Used AI tools to create logos, images, animated videos, promotional content, websites and interactive educational games" data-bm="Menggunakan alatan AI untuk menghasilkan logo, imej, video animasi, kandungan promosi, laman web dan permainan pendidikan interaktif">Used AI tools to create logos, images, animated videos, promotional content, websites and interactive educational games</li>
+      <li data-en="Explored AI-assisted development of management systems, data collection platforms, dashboards and interactive applications" data-bm="Meneroka pembangunan sistem pengurusan, platform kutipan data, papan pemuka dan aplikasi interaktif berbantukan AI">Explored AI-assisted development of management systems, data collection platforms, dashboards and interactive applications</li>
+      <li data-en="Collaborated in a team to develop Y-Care Portal PWA YADIM, a web-based digital platform created using Canva and AI tools" data-bm="Bekerjasama dalam pasukan membangunkan Y-Care Portal PWA YADIM, platform digital berasaskan web yang dihasilkan menggunakan Canva dan alatan AI">Collaborated in a team to develop Y-Care Portal PWA YADIM, a web-based digital platform created using Canva and AI tools</li>
     </ul>
   </div>
 
-  <!-- Rest of content stays same... -->
+  <div class="card">
+    <h3 data-en="Online Teacher - Freelance" data-bm="Guru Al-Quran Atas Talian - Freelance">Online Teacher - Freelance</h3>
+    <p class="date">
+      KQO (Kelas Quran Online)<br>
+      <span data-en="November – December 2025 | January – February 2026" data-bm="November – Disember 2025 | Januari – Februari 2026">November – December 2025 | January – February 2026</span>
+    </p>
+    <ul>
+      <li data-en="Taught Quran reading, Iqra' and basic Tajwid to students online." data-bm="Mengajar bacaan Al-Quran, Iqra' dan asas Tajwid kepada pelajar secara atas talian.">Taught Quran reading, Iqra' and basic Tajwid to students online.</li>
+      <li data-en="Guided students in improving their reading fluency and understanding of basic Tajwid." data-bm="Membimbing pelajar meningkatkan kefasihan bacaan dan kefahaman asas Tajwid.">Guided students in improving their reading fluency and understanding of basic Tajwid.</li>
+      <li data-en="Prepared teaching materials and monitored students' reading progress." data-bm="Menyediakan bahan pembelajaran dan memantau perkembangan bacaan pelajar.">Prepared teaching materials and monitored students' reading progress.</li>
+    </ul>
+  </div>
 
+  <div class="card">
+    <h3 data-en="Part-Time Administrative Support" data-bm="Sokongan Pentadbiran Sepuh Masa / Part-Time">Part-Time Administrative Support</h3>
+    <p class="date">
+      Shopee Warehouse<br>
+      <span data-en="July – September 2025" data-bm="Julai – September 2025">July – September 2025</span>
+    </p>
+    <ul>
+      <li data-en="Assisted with daily operations and the arrangement of goods." data-bm="Membantu operasi harian dan penyusunan barangan.">Assisted with daily operations and the arrangement of goods.</li>
+      <li data-en="Helped maintain an organised storage and goods-handling process." data-bm="Membantu memastikan proses penyimpanan dan pengendalian barangan teratur.">Helped maintain an organised storage and goods-handling process.</li>
+      <li data-en="Supported logistics activities, including goods movement, handling and coordination." data-bm="Menyokong aktiviti logistik termasuk pergerakan, pengendalian dan koordinasi barangan.">Supported logistics activities, including goods movement, handling and coordination.</li>
+    </ul>
+  </div>
 </section>
 
-<!-- ...other sections unaffected -->
+<section id="education">
+  <p class="subtitle" data-en="ACADEMIC BACKGROUND" data-bm="LATAR BELAKANG AKADEMIK">ACADEMIC BACKGROUND</p>
+  <h2 data-en="Education" data-bm="Pendidikan">Education</h2>
+
+  <div class="card">
+    <h3 data-en="Bachelor's Degree in Usuluddin with Honours" data-bm="Ijazah Sarjana Muda Usuluddin dengan Kepujian">Bachelor's Degree in Usuluddin with Honours</h3>
+    <p class="date">
+      Universiti Sultan Zainal Abidin (UniSZA)<br>
+      2023 – 2026
+    </p>
+    <ul>
+      <li data-en="Completed a Final Year Project (FYP) involving academic research, thesis writing and information analysis." data-bm="Menyiapkan Projek Tahun Akhir (FYP) yang melibatkan penyelidikan akademik, penulisan tesis dan analisis maklumat.">Completed a Final Year Project (FYP) involving academic research, thesis writing and information analysis.</li>
+      <li data-en="Studied Islamic theology, Quranic studies, Hadith, Islamic thought, Tasawwuf and classical Islamic texts (Turath)." data-bm="Mempelajari akidah Islam, pengajian Al-Quran, Hadis, pemikiran Islam, Tasawwuf dan teks klasik Islam (Turath).">Studied Islamic theology, Quranic studies, Hadith, Islamic thought, Tasawwuf and classical Islamic texts (Turath).</li>
+      <li data-en="Participated in organising and managing academic programmes and university activities." data-bm="Terlibat dalam penganjuran dan pengurusan program akademik serta aktiviti universiti.">Participated in organising and managing academic programmes and university activities.</li>
+      <li data-en="Completed Quranic memorisation requirements involving selected Surahs." data-bm="Menyelesaikan syarat hafazan Al-Quran melibatkan surah-surah terpilih.">Completed Quranic memorisation requirements involving selected Surahs.</li>
+      <li data-en="Developed skills in academic writing, research, critical thinking, presentations and teamwork." data-bm="Membangunkan kemahiran penulisan akademik, penyelidikan, pemikiran kritis, persembahan dan kerja berpasukan.">Developed skills in academic writing, research, critical thinking, presentations and teamwork.</li>
+      <li data-en="Developed Arabic language skills through reading, understanding and analysing classical Islamic texts." data-bm="Menguasai kemahiran bahasa Arab melalui pembacaan, kefahaman dan analisis teks klasik Islam.">Developed Arabic language skills through reading, understanding and analysing classical Islamic texts.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-en="Diploma in Islamic Studies and Information Technology" data-bm="Diploma Pengajian Islam dan Teknologi Maklumat">Diploma in Islamic Studies and Information Technology</h3>
+    <p class="date">
+      Universiti Sultan Zainal Abidin (UniSZA)<br>
+      2021 – 2023
+    </p>
+    <ul>
+      <li data-en="Studied fundamental Islamic subjects, Arabic language and Information Technology." data-bm="Mempelajari subjek asas Islam, bahasa Arab dan Teknologi Maklumat.">Studied fundamental Islamic subjects, Arabic language and Information Technology.</li>
+      <li data-en="Developed a restaurant ordering application as part of an academic project." data-bm="Membangunkan aplikasi pesanan restoran sebagai sebahagian daripada projek akademik.">Developed a restaurant ordering application as part of an academic project.</li>
+      <li data-en="Completed basic system development and programming tasks using Java." data-bm="Menyelesaikan tugasan pembangunan sistem asas dan pengaturcaraan menggunakan Java.">Completed basic system development and programming tasks using Java.</li>
+      <li data-en="Created a simple digital game using Adobe software as part of multimedia coursework." data-bm="Mencipta permainan digital ringkas menggunakan perisian Adobe sebagai tugasan multimedia.">Created a simple digital game using Adobe software as part of multimedia coursework.</li>
+      <li data-en="Gained practical experience in web design using HTML and CSS, as well as graphic design using Adobe Illustrator and Canva." data-bm="Memperoleh pengalaman praktikal dalam reka bentuk web menggunakan HTML dan CSS, serta reka bentuk grafik menggunakan Adobe Illustrator dan Canva.">Gained practical experience in web design using HTML and CSS, as well as graphic design using Adobe Illustrator and Canva.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="certifications">
+  <p class="subtitle" data-en="LEARNING & DEVELOPMENT" data-bm="PEMBELAJARAN & PEMBANGUNAN">LEARNING & DEVELOPMENT</p>
+  <h2 data-en="Certificates & Achievements" data-bm="Sijil & Pencapaian">Certificates & Achievements</h2>
+
+  <div class="card">
+    <h3>2026</h3>
+
+    <ul>
+      <li>
+        <strong data-en="Secretariat Intern" data-bm="Pelatih Sekretariat">Secretariat Intern</strong> — Yayasan Dakwah Islamiah Malaysia (YADIM), Putrajaya
+        <p class="date"><span data-en="July – October 2026" data-bm="Julai – Oktober 2026">July – October 2026</span></p>
+      </li>
+    </ul>
+
+    <h4 data-en="Kor Sukarelawan Polis Siswa/Siswi (Kor SUKSIS)" data-bm="Kor Sukarelawan Polis Siswa/Siswi (Kor SUKSIS)">Kor Sukarelawan Polis Siswa/Siswi (Kor SUKSIS)</h4>
+
+    <ul>
+      <li>
+        <strong data-en="Inspector Certificate" data-bm="Sijil Inspektor">Inspector Certificate</strong>
+        <p class="date">2026</p>
+        <p data-en="Awarded the Inspector Certificate after completing the required training and fulfilling the responsibilities under Kor SUKSIS." data-bm="Dianugerahkan Sijil Inspektor selepas melengkapkan latihan yang ditetapkan dan memenuhi tanggungjawab di bawah Kor SUKSIS.">Awarded the Inspector Certificate after completing the required training and fulfilling the responsibilities under Kor SUKSIS.</p>
+      </li>
+
+      <li>
+        <strong data-en="Head of Spiritual Affairs — Kor SUKSIS (2023/2025 Session)" data-bm="Ketua Hal Ehwal Kerohanian — Kor SUKSIS (Sesi 2023/2025)">Head of Spiritual Affairs — Kor SUKSIS (2023/2025 Session)</strong>
+        <p data-en="Led spiritual activities and helped organise religious programmes for SUKSIS members." data-bm="Menerajui aktiviti kerohanian dan membantu menganjurkan program keagamaan untuk ahli SUKSIS.">Led spiritual activities and helped organise religious programmes for SUKSIS members.</p>
+      </li>
+
+      <li>
+        <strong data-en="Spiritual Affairs Exco — Basic Course for General Operations Force (GOF)" data-bm="Exco Hal Ehwal Kerohanian — Kursus Asas Pasukan Gerakan Am (PGA)">Spiritual Affairs Exco — Basic Course for General Operations Force (GOF)</strong>
+        <p data-en="Assisted in managing spiritual activities and supporting programme arrangements throughout the course." data-bm="Membantu menguruskan aktiviti kerohanian dan menyokong persiapan program sepanjang kursus berlangsung.">Assisted in managing spiritual activities and supporting programme arrangements throughout the course.</p>
+      </li>
+
+      <li>
+        <strong data-en="Musketry & Shooting Training Programme — Kor SUKSIS" data-bm="Program Latihan Menembak & Senjata — Kor SUKSIS">Musketry & Shooting Training Programme — Kor SUKSIS</strong>
+        <p data-en="Participated in firearm training involving the M16 rifle and revolver, while developing discipline, focus and safe firearm-handling skills." data-bm="Menyertai latihan senjata api melibatkan raifal M16 dan revolver, sambil membina disiplin, fokus serta kemahiran pengendalian senjata api yang selamat.">Participated in firearm training involving the M16 rifle and revolver, while developing discipline, focus and safe firearm-handling skills.</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-en="Other Achievements" data-bm="Pencapaian Lain">Other Achievements</h3>
+
+    <ul>
+      <li>
+        <strong data-en="ASWJ Faith Development Camp (SULAM Programme) — Exco Multimedia & Technical" data-bm="Kem Pemantapan Akidah ASWJ (Program SULAM) — Exco Multimedia & Teknikal">ASWJ Faith Development Camp (SULAM Programme) — Exco Multimedia & Technical</strong>
+        <p data-en="Managed multimedia and technical needs, including programme visuals and technical support during the event." data-bm="Menguruskan keperluan multimedia dan teknikal, termasuk visual program serta sokongan teknikal semasa acara.">Managed multimedia and technical needs, including programme visuals and technical support during the event.</p>
+      </li>
+
+      <li>
+        <strong data-en="ASWJ Strengthening Seminar (SULAM Programme) — Exco, Venue & Cleanliness Unit" data-bm="Seminar Pemantapan ASWJ (Program SULAM) — Exco, Unit Tempat & Kebersihan">ASWJ Strengthening Seminar (SULAM Programme) — Exco, Venue & Cleanliness Unit</strong>
+        <p data-en="Assisted with venue preparation, cleanliness and coordination to ensure the programme ran smoothly." data-bm="Membantu penyediaan tempat, kebersihan dan koordinasi bagi memastikan program berjalan lancar.">Assisted with venue preparation, cleanliness and coordination to ensure the programme ran smoothly.</p>
+      </li>
+
+      <li>
+        <strong data-en="Secretary — Community Practical Slaughtering Programme" data-bm="Setiausaha — Program Ibadah Qurban & Sembelihan Amal Komuniti">Secretary — Community Practical Slaughtering Programme</strong>
+        <p data-en="Prepared programme proposals and meeting notes, handled programme documentation and assisted with administrative arrangements." data-bm="Menyediakan kertas kerja dan nota mesyuarat program, mengendalikan dokumentasi serta membantu urusan pentadbiran.">Prepared programme proposals and meeting notes, handled programme documentation and assisted with administrative arrangements.</p>
+      </li>
+
+      <li>
+        <strong data-en="Course Sports Referee" data-bm="Pengadil Sukan Kursus">Course Sports Referee</strong>
+        <p data-en="Appointed as a referee for the course sports event, helping manage matches and ensure fair play." data-bm="Dilantik sebagai pengadil untuk acara sukan kursus, membantu menguruskan perlawanan dan memastikan permainan adil.">Appointed as a referee for the course sports event, helping manage matches and ensure fair play.</p>
+      </li>
+
+      <li>
+        <strong data-en="Terengganu Marathon (TM25) — Volunteer" data-bm="Terengganu Marathon (TM25) — Sukarelawan">Terengganu Marathon (TM25) — Volunteer</strong>
+        <p data-en="Assisted with participant management and provided support during the event." data-bm="Membantu pengurusan peserta dan memberikan sokongan sepanjang acara berlangsung.">Assisted with participant management and provided support during the event.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="sports">
+  <p class="subtitle" data-en="SPORTS & CO-CURRICULAR" data-bm="SUKAN & KOKURIKULUM">SPORTS & CO-CURRICULAR</p>
+  <h2 data-en="Sports Achievements" data-bm="Pencapaian Sukan">Sports Achievements</h2>
+
+  <div class="card">
+    <h3 data-en="2025 — Sports Week & Cultural Festival" data-bm="2025 — Minggu Sukan & Festival Kebudayaan">2025 — Sports Week & Cultural Festival</h3>
+    <ul>
+      <li data-en="Netball — 1st Place" data-bm="Bola Jaring — Tempat Pertama">Netball — 1st Place</li>
+      <li data-en="Handball — 1st Place" data-bm="Bola Baling — Tempat Pertama">Handball — 1st Place</li>
+      <li data-en="Badminton Doubles — 2nd Place" data-bm="Badminton Beregu — Tempat Kedua">Badminton Doubles — 2nd Place</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-en="2024 — Sports Week & Cultural Festival" data-bm="2024 — Minggu Sukan & Festival Kebudayaan">2024 — Sports Week & Cultural Festival</h3>
+    <ul>
+      <li data-en="Netball — 1st Place" data-bm="Bola Jaring — Tempat Pertama">Netball — 1st Place</li>
+      <li data-en="Volleyball — 3rd Place" data-bm="Bola Tampar — Tempat Ketiga">Volleyball — 3rd Place</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-en="2024 — Mawahib Sukan Antara Syukbah (MASAS)" data-bm="2024 — Mawahib Sukan Antara Syukbah (MASAS)">2024 — Mawahib Sukan Antara Syukbah (MASAS)</h3>
+    <ul>
+      <li data-en="Badminton — 3rd Place" data-bm="Badminton — Tempat Ketiga">Badminton — Tempat Ketiga</li>
+    </ul>
+  </div>
+</section>
+
+<section id="connect">
+  <p class="subtitle" data-en="LET'S CONNECT" data-bm="JOM BERHUBUNG">LET'S CONNECT</p>
+  <h2 data-en="Get In Touch" data-bm="Hubungi Saya">Get In Touch</h2>
+
+  <p data-en="Feel free to reach out for professional opportunities and collaboration."
+     data-bm="Jangan teragak-agak untuk menghubungi saya bagi peluang kerjaya profesional dan kerjasama.">
+    Feel free to reach out for professional opportunities and collaboration.
+  </p>
+
+  <div class="contact-links">
+    <a href="https://mail.google.com/mail/?view=cm&to=aaqilahbbalqis@gmail.com" target="_blank" data-en="EMAIL" data-bm="EMEL">EMAIL</a>
+    <a href="https://www.linkedin.com/in/nur-‘aqilah-balqis-875828446/" target="_blank">LINKEDIN</a>
+  </div>
+</section>
 
 <footer>
-  © 2026 'Aqilah Balqis | Personal Portfolio
+  <span data-en="© 2026 'Aqilah Balqis | Personal Portfolio" data-bm="© 2026 'Aqilah Balqis | Portfolio Peribadi">© 2026 'Aqilah Balqis | Personal Portfolio</span>
 </footer>
 
 <script>
+// Scroll Spy untuk Navigasi Aktif
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      navLinks.forEach((link) => {
+      navLinks.forEach(link => {
         link.classList.toggle(
           "active",
           link.getAttribute("href") === "#" + entry.target.id
@@ -638,112 +790,41 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  rootMargin: "-25% 0px -65% 0px",
+  rootMargin: "-25% 0px -65% 0px"
 });
 
-sections.forEach((section) => observer.observe(section));
+sections.forEach(section => observer.observe(section));
 
-// Language toggle
-const textContent = {
-  en: {
-    "nav-about": "About Me",
-    "nav-profile": "Profile",
-    "nav-experience": "Experience",
-    "nav-education": "Education",
-    "nav-certifications": "Certificates",
-    "nav-sports": "Sports",
-    "nav-connect": "Contact",
-    "hero-welcome": "WELCOME TO MY PORTFOLIO",
-    "hero-hello": "Hello, I'm",
-    "btn-get-to-know": "Get To Know Me",
-    "btn-connect": "Let's Connect",
-    "about-subtitle": "GET TO KNOW ME",
-    "about-title": "About Me",
-    "about-p1": "A fresh graduate with a Bachelor of Usuluddin with Honours and a Diploma in Islamic Studies and Information Technology from Universiti Sultan Zainal Abidin (UniSZA).",
-    "about-p2": "Has a strong interest in administration, secretarial work, financial management and operational support. Keen to build a career in administrative and office management, particularly in document management, record keeping, financial administration and daily office operations.",
-    "profile-subtitle": "WHO I AM",
-    "profile-title": "Professional Profile",
-    "profile-p": "Gained practical experience through an internship and previous work experience involving administrative support, documentation, filing, record management, programme coordination and general office tasks. Also has an interest in creative work, including designing and producing visual materials using basic digital tools. Equipped with basic computer skills, good organisational abilities and a willingness to learn new systems and procedures. Able to work independently or as part of a team, with a responsible attitude, good judgement and adaptability in handling different tasks.",
-    "skill-administration": "Administration",
-    "skill-document-management": "Document Management",
-    "skill-secretarial": "Secretarial",
-    "skill-financial-administration": "Financial Administration",
-    "skill-financial-record-keeping": "Financial Record Keeping",
-    "skill-data-entry": "Data Entry",
-    "skill-microsoft-office": "Microsoft Office",
-    "skill-google-workspace": "Google Workspace",
-    "skill-github-pages": "GitHub Pages",
-    "skill-basic-html-css": "Basic HTML & CSS",
-    "skill-canva": "Canva",
-    "skill-capcut": "CapCut",
-    "skill-teamwork": "Teamwork",
-    "skill-problem-solving": "Problem Solving",
-    "skill-willingness-to-learn": "Willingness to Learn",
-    "skill-time-management": "Time Management",
-    "experience-subtitle": "MY JOURNEY",
-    "experience-title": "Experience",
-    "experience-1-title": "Secretariat Intern"
-  },
-  bm: {
-    "nav-about": "Tentang Saya",
-    "nav-profile": "Profil",
-    "nav-experience": "Pengalaman",
-    "nav-education": "Pendidikan",
-    "nav-certifications": "Sijil",
-    "nav-sports": "Sukan",
-    "nav-connect": "Hubungi",
-    "hero-welcome": "SELAMAT DATANG KE PORTFOLIO SAYA",
-    "hero-hello": "Hai, Saya",
-    "btn-get-to-know": "Kenali Saya",
-    "btn-connect": "Mari Berhubung",
-    "about-subtitle": "KENALI SAYA",
-    "about-title": "Tentang Saya",
-    "about-p1": "Graduan baru dengan Ijazah Sarjana Muda Usuluddin dengan Kepujian dan Diploma dalam Pengajian Islam serta Teknologi Maklumat dari Universiti Sultan Zainal Abidin (UniSZA).",
-    "about-p2": "Berminat kuat dalam pentadbiran, kerja sekretariat, pengurusan kewangan dan sokongan operasi. Berhasrat membina kerjaya dalam pentadbiran dan pengurusan pejabat, terutamanya dalam pengurusan dokumen, rekod, pentadbiran kewangan dan operasi harian pejabat.",
-    "profile-subtitle": "SIAPA SAYA",
-    "profile-title": "Profil Profesional",
-    "profile-p": "Memperoleh pengalaman praktikal melalui latihan industri dan pengalaman kerja terdahulu yang melibatkan sokongan pentadbiran, dokumentasi, pengarkiban, pengurusan rekod, penyelarasan program dan tugasan pejabat am. Juga berminat dalam kerja kreatif, termasuk mereka dan menghasilkan bahan visual menggunakan alat digital asas. Mempunyai kemahiran komputer asas, kebolehan organisasi yang baik dan keinginan untuk mempelajari sistem dan prosedur baru. Mampu bekerja secara berdikari atau dalam kumpulan, dengan sikap bertanggungjawab, penilaian yang baik dan kemampuan menyesuaikan diri dalam mengendalikan pelbagai tugas.",
-    "skill-administration": "Pentadbiran",
-    "skill-document-management": "Pengurusan Dokumen",
-    "skill-secretarial": "Sekretariat",
-    "skill-financial-administration": "Pentadbiran Kewangan",
-    "skill-financial-record-keeping": "Rekod Kewangan",
-    "skill-data-entry": "Pemasukan Data",
-    "skill-microsoft-office": "Microsoft Office",
-    "skill-google-workspace": "Google Workspace",
-    "skill-github-pages": "GitHub Pages",
-    "skill-basic-html-css": "HTML & CSS Asas",
-    "skill-canva": "Canva",
-    "skill-capcut": "CapCut",
-    "skill-teamwork": "Kerja Berpasukan",
-    "skill-problem-solving": "Penyelesaian Masalah",
-    "skill-willingness-to-learn": "Keinginan Untuk Belajar",
-    "skill-time-management": "Pengurusan Masa",
-    "experience-subtitle": "PENGALAMAN SAYA",
-    "experience-title": "Pengalaman",
-    "experience-1-title": "Pegawai Praktikal Sekretariat"
-  }
-};
+// --- FUNGSI PENUKAR BAHASA (LANGUAGE TOGGLE) ---
+let currentLang = localStorage.getItem('portfolio_lang') || 'en';
 
-let currentLang = "en";
-
-document.getElementById("lang-toggle").addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "bm" : "en";
-
-  document.querySelectorAll("[data-key]").forEach((el) => {
-    const key = el.getAttribute("data-key");
-    if (textContent[currentLang][key]) {
-      el.textContent = textContent[currentLang][key];
-    }
+function applyLanguage(lang) {
+  const elements = document.querySelectorAll('[data-en][data-bm]');
+  elements.forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
   });
+  
+  // Tukar teks pada butang penukar bahasa
+  const btn = document.getElementById('langToggle');
+  if (lang === 'en') {
+    btn.textContent = 'BM / EN (EN)';
+  } else {
+    btn.textContent = 'BM / EN (BM)';
+  }
+}
 
-  document.getElementById("lang-toggle").textContent =
-    currentLang === "en" ? "BM" : "EN";
+function toggleLanguage() {
+  currentLang = currentLang === 'en' ? 'bm' : 'en';
+  localStorage.setItem('portfolio_lang', currentLang);
+  applyLanguage(currentLang);
+}
+
+// Jalankan semasa muat naik halaman pertama kali
+document.addEventListener('DOMContentLoaded', () => {
+  applyLanguage(currentLang);
 });
 </script>
 
 </body>
 </html>
-
-
 
